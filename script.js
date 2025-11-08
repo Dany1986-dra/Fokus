@@ -98,13 +98,13 @@ function iniciarOpausar() {
     audioPlay.play();
     idIntervalo = setInterval(cuentaRegresiva, 1000);
     textoIniciarPausar.textContent = "Pausar";
-    iconoIniciarPausar.setAttribute('src', `/imagenes/pause.png`);
+    iconoIniciarPausar.setAttribute('src', `./imagenes/pause.png`);
 }
 
 function reiniciar() {
     clearInterval(idIntervalo); 
     textoIniciarPausar.textContent = "Comenzar";
-    iconoIniciarPausar.setAttribute('src', `/imagenes/play_arrow.png`);
+    iconoIniciarPausar.setAttribute('src', `./imagenes/play_arrow.png`);
     idIntervalo = null;
 }
 
