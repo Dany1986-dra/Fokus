@@ -1,3 +1,4 @@
+// Selección de elementos del DOM
 const html = document.querySelector('html');
 const botonEnfoque = document.querySelector('.app__card-button--enfoque');
 const botonCorto = document.querySelector('.app__card-button--corto');
@@ -11,16 +12,20 @@ const textoIniciarPausar = document.querySelector('#start-pause span');
 const iconoIniciarPausar = document.querySelector(".app__card-primary-butto-icon");
 const tiempoEnPantalla = document.querySelector('#timer');
 
+// Variables de estado
 const musica = new Audio('./sonidos/luna-rise-part-one.mp3');
 const audioPlay = new Audio('./sonidos/play.wav');
 const audioPausa = new Audio('./sonidos/pause.mp3');
 const audioTiempoFinalizado = new Audio('./sonidos/beep.mp3');
 
+// Variables de tiempo
 let tiempoTranscurridoEnSegundos = 1500;
 let idIntervalo = null;
 
+// Configuración inicial
 musica.loop = true;
 
+// Event listeners
 inputMusicaEnfoque.addEventListener('change', () => {
     if(musica.paused) {
         musica.play();
@@ -47,13 +52,14 @@ botonLargo.addEventListener('click', () => {
     botonLargo.classList.add('active');
 });
 
+// Funciones
 function cambiarContexto(contexto) {
     mostrarTiempo();
     botones.forEach(function (botonContexto){
         botonContexto.classList.remove('active');
     });
     html.setAttribute('data-contexto', contexto);
-    banner.setAttribute('src', `/imagenes/${contexto}.png`);
+    banner.setAttribute('src', `./imagenes/${contexto}.png`);
     switch (contexto) {
         case "enfoque":
             titulo.innerHTML = `
@@ -76,6 +82,7 @@ function cambiarContexto(contexto) {
     }
 }
 
+// Lógica del temporizador
 const cuentaRegresiva = () => {
     if(tiempoTranscurridoEnSegundos <= 0){
         audioTiempoFinalizado.play();
@@ -87,8 +94,10 @@ const cuentaRegresiva = () => {
     mostrarTiempo();
 };
 
+// Lógica del botón iniciar/pausar
 botonIniciarPausar.addEventListener('click', iniciarOpausar);
 
+// Funciones de control del temporizador
 function iniciarOpausar() {
     if(idIntervalo){
         audioPausa.play();
@@ -98,13 +107,13 @@ function iniciarOpausar() {
     audioPlay.play();
     idIntervalo = setInterval(cuentaRegresiva, 1000);
     textoIniciarPausar.textContent = "Pausar";
-    iconoIniciarPausar.setAttribute('src', `./imagenes/pause.png`);
+    iconoIniciarPausar.setAttribute('src', `/imagenes/pause.png`);
 }
 
 function reiniciar() {
     clearInterval(idIntervalo); 
     textoIniciarPausar.textContent = "Comenzar";
-    iconoIniciarPausar.setAttribute('src', `./imagenes/play_arrow.png`);
+    iconoIniciarPausar.setAttribute('src', `/imagenes/play_arrow.png`);
     idIntervalo = null;
 }
 
