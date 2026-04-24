@@ -1,0 +1,34 @@
+# Robots.txt para Fokus - Aplicación de Productividad
+# Última actualización: 24 de abril de 2026
+
+# Permitir a todos los bots (default)
+User-agent: *
+Allow: /
+
+# Desallowlist para recursos que no necesitan indexación
+Disallow: /.vscode/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /*.json$
+Disallow: /docs/private/
+
+# Permitir acceso a assets públicos
+Allow: /assets/
+Allow: /imagenes/
+Allow: /sonidos/
+
+# Reglas específicas para Google
+User-agent: Googlebot
+Allow: /
+
+# Reglas específicas para Bing
+User-agent: Bingbot
+Allow: /
+
+# Reglas para rastreadores lentos
+User-agent: AhrefsBot
+User-agent: SemrushBot
+Crawl-delay: 10
+
+# Sitemap
+Sitemap: https://fokus.example.com/sitemap.xml

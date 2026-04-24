@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es" data-contexto="enfoque">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página no encontrada - Fokus">
+    <meta name="author" content="Daniel Rivera Alpízar - Alura Latam">
+    <meta name="robots" content="noindex, follow">
+    <title>404 - Página No Encontrada | Fokus</title>
+    
+    <link rel="shortcut icon" href="./imagenes/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .error-code {
+            font-family: 'Unbounded', cursive;
+            font-size: 12rem;
+            font-weight: 700;
+            color: var(--lils);
+            line-height: 1;
+            margin: 0;
+            text-shadow: 0 0.8rem 1.6rem rgba(216, 174, 255, 0.3);
+        }
+
+        .error-title {
+            font-family: 'Unbounded', cursive;
+            font-size: 3.2rem;
+            font-weight: 600;
+            color: var(--color-secondary);
+            margin: 1.6rem 0;
+        }
+
+        .error-description {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: #d3dce6;
+            max-width: 52rem;
+            margin-bottom: 3.2rem;
+            line-height: 1.5;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 3.2rem;
+        }
+
+        .error-button {
+            padding: 1.2rem 2.8rem;
+            border-radius: 3.2rem;
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .error-button--primary {
+            background: var(--linear-botes);
+            color: var(--color-secondary);
+        }
+
+        .error-button--primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 1.2rem 2.4rem rgba(216, 174, 255, 0.3);
+        }
+
+        .error-button--secondary {
+            background: transparent;
+            color: var(--lils);
+            border: 0.2rem solid var(--lils);
+        }
+
+        .error-button--secondary:hover {
+            background: rgba(216, 174, 255, 0.1);
+        }
+
+        .error-image {
+            max-width: 32rem;
+            margin-top: 3.2rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 767px) {
+            .error-code {
+                font-size: 6rem;
+            }
+
+            .error-title {
+                font-size: 2rem;
+            }
+
+            .error-description {
+                font-size: 1.4rem;
+            }
+
+            .error-actions {
+                gap: 1rem;
+                margin-top: 2rem;
+            }
+
+            .error-button {
+                padding: 1rem 2rem;
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main id="contenido-principal" class="app">
+        <div class="error-container">
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">Página No Encontrada</h2>
+            <p class="error-description">
+                Lo sentimos, la página que buscas no existe o ha sido movida. 
+                Quizás se perdió durante tu sesión de enfoque. 🎯
+            </p>
+            
+            <div class="error-actions">
+                <a href="./" class="error-button error-button--primary">
+                    Volver al Inicio
+                </a>
+                <a href="./README.md" class="error-button error-button--secondary">
+                    Ver Documentación
+                </a>
+            </div>
+
+            <img src="./imagenes/descanso-largo.png" alt="Ilustración de error" class="error-image">
+        </div>
+    </main>
+
+    <footer class="app__footer" aria-label="Información de derechos reservados">
+        <div class="app__footer-content">
+            <small class="app__footer-meta">
+                Derechos reservados &copy; 2026 Daniel Rivera Alpízar · Alura Latam
+            </small>
+        </div>
+    </footer>
+</body>
+
+</html>
